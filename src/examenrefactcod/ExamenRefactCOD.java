@@ -18,30 +18,30 @@ public class ExamenRefactCOD {
 
     public static void main(String[] args) {
         {
-            int dig = 3;
-            int ndig = 0;
-            if (dig <= 0) {
+            int digitos = 3;
+            int numdig = 0;
+            if (digitos <= 0) {
                 System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
             }
             for (int i = 1; i <= 99999; i++) {
-                int aux = i;
+                int auxil = i;
 
-                int contador = 0;
+                int cont = 0;
 
-                while (aux != 0) {
-                    aux = aux / 10;
-                    contador++;
+                while (auxil != 0) {
+                    auxil = auxil / 10;
+                    cont++;
                 }
-                ndig = contador;
+                numdig = cont;
 
-                if (ndig == dig) {
+                if (numdig == digitos) {
                     if (i < 4) {
                         p = true;
                     } else {
                         if (i % 2 == 0) {
                             p = false;
                         } else {
-                            int contador1 = 0;
+                            int contadores = 0;
                             int i1 = 1;
                             int k = (i - 1) / 2;
                             if (k % 2 == 0) {
@@ -50,15 +50,15 @@ public class ExamenRefactCOD {
 
                             while (i1 <= k) {
                                 if (i % i1 == 0) {
-                                    contador1++;
+                                    contadores++;
                                 }
                                 i1 += 2;
-                                if (contador1 == 2) {
+                                if (contadores == 2) {
                                     i1 = k + 1;
                                 }
                             }
 
-                            if (contador1 == 1) {
+                            if (contadores == 1) {
                                 p = true;
                             }
                         }
