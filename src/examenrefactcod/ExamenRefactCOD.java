@@ -21,55 +21,60 @@ public class ExamenRefactCOD {
             int digitos = 3;
             int numdig = 0;
             if (digitos <= 0) {
-                System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+                imprimirPorPantalla();
             }
             for (int i = 1; i <= 99999; i++) {
-                int auxil = i;
-
-                int cont = 0;
-
-                while (auxil != 0) {
-                    auxil = auxil / 10;
-                    cont++;
-                }
-                numdig = cont;
-
-                if (numdig == digitos) {
-                    if (i < 4) {
-                        p = true;
-                    } else {
-                        if (i % 2 == 0) {
-                            p = false;
-                        } else {
-                            int contadores = 0;
-                            int i1 = 1;
-                            int k = (i - 1) / 2;
-                            if (k % 2 == 0) {
-                                k--;
-                            }
-
-                            while (i1 <= k) {
-                                if (i % i1 == 0) {
-                                    contadores++;
-                                }
-                                i1 += 2;
-                                if (contadores == 2) {
-                                    i1 = k + 1;
-                                }
-                            }
-
-                            if (contadores == 1) {
-                                p = true;
-                            }
-                        }
-                    }
-
-                    if (p == true) {
-                        System.out.println(i);
-                    }
-                }
+                Contador(i, digitos);
             }
         }
     }
 
-}
+    public static void Contador(int i, int digitos) {
+        int numdig;
+        int auxil = i;
+        int cont = 0;
+        while (auxil != 0) {
+            auxil = auxil / 10;
+            cont++;
+        }
+        numdig = cont;
+        if (numdig == digitos) {
+            if (i < 4) {
+                p = true;
+            } else {
+                if (i % 2 == 0) {
+                    p = false;
+                } else {
+                    int contadores = 0;
+                    int i1 = 1;
+                    int k = (i - 1) / 2;
+                    if (k % 2 == 0) {
+                        k--;
+                    }
+                    
+                    while (i1 <= k) {
+                        if (i % i1 == 0) {
+                            contadores++;
+                        }
+                        i1 += 2;
+                        if (contadores == 2) {
+                            i1 = k + 1;
+                        }
+                    }
+                    
+                    if (contadores == 1) {
+                        p = true;
+                    }
+                }
+            }
+            
+            if (p == true) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static void imprimirPorPantalla() {
+        System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+    }  
+    }
